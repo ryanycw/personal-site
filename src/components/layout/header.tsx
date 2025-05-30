@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { cn } from '@/src/lib/utils';
-import ThemeToggle from '@/src/components/ui/theme-toggle';
+import { cn } from '@/lib/utils';
+import { ModeToggle } from '@/components/ui/theme-toggle';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -54,7 +54,7 @@ export default function Header() {
           })}
         </nav>
         <div className="ml-auto flex items-center space-x-4">
-          <ThemeToggle />
+          <ModeToggle />
         </div>
       </div>
     </header>
