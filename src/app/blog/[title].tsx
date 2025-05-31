@@ -3,22 +3,23 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 interface BlogPostParams {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ title: string }>;
 }
 
 export async function generateMetadata({ params }: BlogPostParams): Promise<Metadata> {
-  const { slug } = await params;
-  // In a real app, you would fetch the post data based on the slug
+  const { title } = await params;
+  // In a real app, you would fetch the post data based on the title
   return {
-    title: `${slug} | Blog | Ryan`,
+    title: `${title} | Blog | Ryan`,
     description: 'Blog post about technology and development',
   };
 }
 
 export default async function BlogPostPage({ params }: BlogPostParams) {
-  const { slug } = await params;
+  const { title } = await params;
+  console.log(title);
   
-  // In a real app, you would fetch the post data based on the slug
+  // In a real app, you would fetch the post data based on the title
   const post = {
     title: 'Understanding Zero-Knowledge Proofs: A Practical Introduction',
     date: 'May 15, 2023',
